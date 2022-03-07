@@ -1,5 +1,10 @@
 # LockscreenWidget
+
 Samsung Lockscreen widget implementation.
+
+Lockscreen             |  Settings
+:-------------------------:|:-------------------------:
+![](https://github.com/axel7083/LockscreenWidget/blob/main/screenshots/lockscreen.jpg)  |  ![](https://github.com/axel7083/LockscreenWidget/blob/main/screenshots/settings.jpg)
  
 Since some Samsung application which are not installed by default could add a Lock Screen widget, it was certainly possible to add our own if Samsung did not put extra security to prevent us from doing it. Thankfully, anyone can add a “FaceWidget”.
 
