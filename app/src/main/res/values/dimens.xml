@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="face_widget_height">144dp</dimen>
+    <dimen name="face_widget_padding_horizontal">10dp</dimen>
+    <dimen name="face_widget_time_text_layout_height">40dp</dimen>
+    <dimen name="face_widget_time_text_layout_margin_top">24dp</dimen>
+</resources>

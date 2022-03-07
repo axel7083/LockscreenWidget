@@ -1,0 +1,7 @@
+{
+  "record": {
+    "menuInSetting": 1,
+    "labelResNameInSetting": "app_name",
+    "actionDetailSetting": "com.github.axel7083.facewidget.settings.FACE_WIDGET"
+  }
+}
