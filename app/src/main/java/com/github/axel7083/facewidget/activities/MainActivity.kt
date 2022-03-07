@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "==========================")
         LockUtils.isWidgetChecked(this)
-
-        /*val i = IntentFilter()
-        i.addAction("com.github.axel7083.facewidget.action.click")
-        registerReceiver(FaceWidgetReceiver(), i)*/
     }
 
 
