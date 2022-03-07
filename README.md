@@ -38,6 +38,10 @@ You need to create a file in `res/raw/facewidget.json` with the following conten
 
 ## Broadcast Receiver
 
-You need to create a (static) broadcast receiver, to handle the `com.samsung.android.intent.action.REQUEST_SERVICEBOX_REMOTEVIEWS` action. It is sent to require you to build and sent the Remoteview to the systemui.
-After building the view, it needs to be send broadcast to package 'com.android.systemui' with the 'com.samsung.android.intent.action.RESPONSE_SERVICEBOX_REMOTEVIEWS' action.
+You need to create a (static) broadcast receiver, to handle the `com.samsung.android.intent.action.REQUEST_SERVICEBOX_REMOTEVIEWS` action (using intent-filter). It is sent to require you to build and sent the Remoteview to the systemui.
+After building the view, it needs to be send broadcast to package 'com.android.systemui' with the `com.samsung.android.intent.action.RESPONSE_SERVICEBOX_REMOTEVIEWS` action.
 
+## Checking if our widget is activated
+
+In the LockUtils.java class, the function isWidgetChecked can be used.
+It checked the [Settings.System](https://developer.android.com/reference/android/provider/Settings.System) using the key `face_widget_order`
