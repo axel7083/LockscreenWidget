@@ -1,34 +1,40 @@
 package com.github.axel7083.facewidget.activities
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import android.text.TextUtils
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.github.axel7083.facewidget.FaceWidgetRemoteViewManager
+import com.github.axel7083.facewidget.IntentAction.SETTINGS_FACE_WIDGET
 import com.github.axel7083.facewidget.LockUtils
-import com.github.axel7083.facewidget.R
+import com.github.axel7083.facewidget.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        const val TAG: String = "MainActivity"
-    }
+    lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // During first launch setup the RemoteView
-        val manager = FaceWidgetRemoteViewManager(this)
-        manager.updateFaceWidget()
+        updateInfo()
 
-        Log.d(TAG, "==========================")
-        LockUtils.isWidgetChecked(this)
+        // Open the Samsung Settings to the FaceWidget page
+        binding.openSettings.setOnClickListener {
+            val intent = Intent(Settings.ACTION_SETTINGS)
+            intent.action = SETTINGS_FACE_WIDGET
+            startActivity(intent)
+        }
     }
 
+    override fun onPostResume() {
+        super.onPostResume()
+        updateInfo()
+    }
 
-
-
+    // Show if the widget is checked or not.
+    private fun updateInfo() {
+        val r: Boolean = LockUtils.isWidgetChecked(this)
+        binding.info.text = if(r) "The widget is activated" else "The widget is not activated"
+    }
 }

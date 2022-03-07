@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">facewidget</string>
+    <string name="settings_btn">Open settings page</string>
 </resources>

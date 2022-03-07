@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.RemoteViews;
 
 public abstract class AbsRemoteViewBuilder {
-    public static final int REMOTEVIEWSREQ = 117506055;
+    public static final int REMOTEVIEWSREQ = 117506050;
     protected Context mContext;
 
     public abstract RemoteViews build();
